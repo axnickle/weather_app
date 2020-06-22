@@ -7,9 +7,11 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<% if @response %>
+<% if @current %>
   <div>
-    <%= JSON.parse @response.body %>
+    <%= "Current Temperature: #{@current['current_temp']}" %>
+    <%= "Current Weather: #{@current['description']}" %>
+    <%= image_tag @current['icon'] %>
   </div>
 <% end %>
 
@@ -17,3 +19,4 @@
   <!-- JSON.parse =
   <!--'if' statement we have @response variable which is set to response from API -->
   <!-- if we made a call in the controller -->
+<!-- line 12 check for current first on line 10 -->
