@@ -1,3 +1,16 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.a-primary {
+background-color: #460785;
+color: whitesmoke;
+// padding: 14px 25px;
+text-align: center;
+font-family: Georgia, 'Times New Roman', Times, serif,serif;
+text-decoration: none;
+display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: whitesmoke;
+}

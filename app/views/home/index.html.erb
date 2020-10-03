@@ -1,7 +1,12 @@
 <h2>Home Weather Page</h2>
 
 
-<div>New York </div>
-    <%= link_to "New York", search_path %>
+<div>
+    <%= link_to search_path do %>
+          <%= image_tag("logos/location_pin.jpeg", alt: "location pin", height: '25', width: '25') %>
+        <% end %>
+    <%= link_to "Columbus", search_path, class: "a-primary" %>
+<!-- make current temp, high, low available -->
 
-  
+<!-- hourly temps -->
+</div>
