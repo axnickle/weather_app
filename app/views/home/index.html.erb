@@ -1,20 +1,31 @@
 <!-- make current temp, high, low available -->
-<div>
+<div style="padding-top:20px" class="row">
+    <div class="column"></div>
      <% if @current %>
-        <div>
-            <%= "#{@current['current_temp']}" %> &deg;
-            <%= image_tag @current['icon'], alt: "weather icon" %> 
-            <br>
-            <br>
-            <%= "#{@max}" %>&deg;/
-            <%= "#{@min}" %>&deg;
+        <div class="column">
+            <div class="row">
+                <div class="column">
+                    <p style="font-size:40pt;margin-bottom: 10px;">
+                        <%= "#{@current['current_temp']}" %>&deg;
+                    </p>
+                    <%= "#{@max}" %>&deg;/
+                    <%= "#{@min}" %>&deg;<br>
+                </div>
+                <div class="column">
+                     <%= image_tag @current['icon'], alt: "weather icon", width: '200' %> 
+                </div>
+            </div>
+            
+            <div>
+                <%= link_to search_path do %>
+                    <%= image_tag("logos/location_pin.jpeg", alt: "location pin", height: '25', width: '25') %>
+                <% end %>
+                <%= link_to "Columbus", search_path, class: "a-primary" %>
+            </div>
         </div>
     <% end %>
-    <br>
-    <%= link_to search_path do %>
-          <%= image_tag("logos/location_pin.jpeg", alt: "location pin", height: '25', width: '25') %>
-        <% end %>
-    <%= link_to "Columbus", search_path, class: "a-primary" %>
-
+ 
+    <div class="column"></div>
 <!-- hourly temps -->
 </div>
+
