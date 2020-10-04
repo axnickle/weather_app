@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   include WeatherData
-
+          
   def index
     if params['location']
       coordinates = Geocoder.search(params['location']).first.coordinates
@@ -9,3 +9,6 @@ class SearchController < ApplicationController
     end
   end
 end
+
+# line 6: 'search' is inside geocoder gem
+# 'location'

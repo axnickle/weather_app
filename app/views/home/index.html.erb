@@ -1,12 +1,20 @@
-<h2>Home Weather Page</h2>
-
-
+<!-- make current temp, high, low available -->
 <div>
+     <% if @current %>
+        <div>
+            <%= "#{@current['current_temp']}" %> &deg;
+            <%= image_tag @current['icon'], alt: "weather icon" %> 
+            <br>
+            <br>
+            <%= "#{@max}" %>&deg;/
+            <%= "#{@min}" %>&deg;
+        </div>
+    <% end %>
+    <br>
     <%= link_to search_path do %>
           <%= image_tag("logos/location_pin.jpeg", alt: "location pin", height: '25', width: '25') %>
         <% end %>
     <%= link_to "Columbus", search_path, class: "a-primary" %>
-<!-- make current temp, high, low available -->
 
 <!-- hourly temps -->
 </div>

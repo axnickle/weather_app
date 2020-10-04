@@ -2,21 +2,21 @@
 <h2>Search weather by location</h2>
 
 <%= form_with(url: search_path, method: "get", local: true) do %>
-  <%= label_tag(:location, "Enter Location name:") %>
+  <%= label_tag(:location, "Enter location name or zip code:") %>
   <%= text_field_tag(:location) %>
   <%= submit_tag("Search") %>
 <% end %>
 
 <% if @current %>
   <div>
-    <%= "Current Temperature: #{@current['current_temp']}" %>
+    <%= "Current Temperature: #{@current['current_temp']}" %>&deg;
     <%= "Current Weather: #{@current['description']}" %>
     <%= image_tag @current['icon'] %>
   </div>
 <% end %>
 
 <!-- this form allows user to enter a location, where the weather data can pull from OpenWeather-->
-  <!-- JSON.parse =
-  <!--'if' statement we have @response variable which is set to response from API -->
+  <!-- JSON.parse -->
+  <!-- 'if' statement we have @response variable which is set to response from API -->
   <!-- if we made a call in the controller -->
 <!-- line 12 check for current first on line 10 -->
