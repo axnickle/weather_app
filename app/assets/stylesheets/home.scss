@@ -12,8 +12,27 @@ display: inline-block;
 }
 
 a:hover, a:active {
+ 
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: whitesmoke;
   background-color: whitesmoke;
 }
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
 
 /* Create three equal columns that floats next to each other */
 .column {
