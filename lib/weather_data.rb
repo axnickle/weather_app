@@ -7,6 +7,10 @@ module WeatherData
     data['current'] # [] syntax works for hashes and arrays; hash has string keys
   end               # {'current' => 35}, we're pulling out the value for 'current'
 
+  def hourly_temp
+    data['hourly']
+  end 
+
   def daily_temp
     data['daily']
   end
