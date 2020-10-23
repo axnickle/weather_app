@@ -15,12 +15,13 @@
                      <%= image_tag @current['icon'], alt: "weather icon", width: '200' %> 
                 </div>
             </div>
-            
+
             <div>
-                <%= link_to search_path do %>
-                    <%= image_tag("logos/location_pin.jpeg", alt: "location pin", height: '25', width: '25') %>
+                <%= link_to search_path, { style: "font-size: 18pt; font-weight: bold;"} do %>
+                    <%= image_tag("location_pin.png", alt: "location pin", height: '25', width: '25') %>
+                        Columbus
                 <% end %>
-                <%= link_to "Columbus", search_path, class: "a-primary" %>
+                <%#= link_to "Columbus", search_path, class: "a-primary" %>
             </div>
         </div>
     <% end %>
@@ -28,4 +29,9 @@
     <div class="column"></div>
 <!-- hourly temps -->
 </div>
-
+        <% @hourly_temp.take(7).each do |hourly| %>  
+        <div>
+            <%= hourly_convert_temp(hourly["temp"])%> <! -- 298.82 -->
+        </div>                                 
+        <% end %>
+<!-- no output so no need for = -->
