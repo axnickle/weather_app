@@ -29,9 +29,14 @@
     <div class="column"></div>
 <!-- hourly temps -->
 </div>
-        <% @hourly_temp.take(7).each do |hourly| %>  
-        <div>
-            <%= hourly_convert_temp(hourly["temp"])%> <! -- 298.82 -->
-        </div>                                 
+  <div class="row">
+        <% @hourly_temp.take(7).each do |hourly| %> 
+            <div class="column">
+                <%= hourly_convert_temp(hourly["temp"])%> <! -- 298.82 -->
+                <%= Time.at(hourly["dt"]).strftime("%l %P")%>
+                <%= image_tag(weather_icon(hourly["weather"].first["icon"]), alt: "weather icon") %>
+            </div>                                 
         <% end %>
+   </div>
 <!-- no output so no need for = -->
+<!-- @hourly_temp is where we dump hourly json data >
