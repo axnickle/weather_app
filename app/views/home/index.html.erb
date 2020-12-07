@@ -31,10 +31,16 @@
 </div>
   <div class="row">
         <% @hourly_temp.take(7).each do |hourly| %> 
-            <div class="column">
-                <%= hourly_convert_temp(hourly["temp"])%> <! -- 298.82 -->
-                <%= Time.at(hourly["dt"]).strftime("%l %P")%>
-                <%= image_tag(weather_icon(hourly["weather"].first["icon"]), alt: "weather icon") %>
+            <div class="column_7">
+                <div style="position: relative;top: 10px;">
+                    <%= image_tag(weather_icon(hourly["weather"].first["icon"]), alt: "weather icon") %>
+                </div>
+                <div>
+                    <%= hourly_convert_temp(hourly["temp"])%>&deg; <! -- 298.82 -->
+                </div>
+                <div style="padding-top: 0.5em;">
+                    <%= Time.at(hourly["dt"]).strftime("%l %P")%>
+                </div>
             </div>                                 
         <% end %>
    </div>
