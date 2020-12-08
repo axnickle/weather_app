@@ -44,5 +44,30 @@
             </div>                                 
         <% end %>
    </div>
+
+   <div>
+    <div>
+        <% @daily.take(8).each_with_index do |day, index| %>
+          <% next if index == 0%>
+          <% if index ==1 %>
+            <div>  
+                Tomorrow
+            </div>
+          <% else %>
+          <div>
+            <%= Time.at(day["dt"]).strftime("%A")%>
+          </div>
+          <% end %>
+          <div>
+            <%= image_tag(weather_icon(day["weather"].first["icon"]), alt: "weather icon") %>
+          </div>
+            <%= "#{day['day_temp']}" %>
+          <div> 
+            <%= day_convert_temp(day["temp"]["max"]) %>&deg;/
+            <%= day_convert_temp(day["temp"]["min"]) %>&deg;
+          </div>
+        <% end %>
+    </div>             
+   </div>
 <!-- no output so no need for = -->
-<!-- @hourly_temp is where we dump hourly json data >
+<!-- @hourly_temp is where we dump hourly json data 

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       coordinates = Geocoder.search('Columbus, Ohio').first.coordinates
       @response = Openweather::Search.one_call(coordinates)
       @current = current_time_data
-      @daily_temp = daily_temp
+      @daily = daily
       @max = max
       @min = min
       @hourly_temp = hourly_temp

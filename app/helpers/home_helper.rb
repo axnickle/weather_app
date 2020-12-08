@@ -5,6 +5,10 @@ module HomeHelper
         convert_temp(temp)
     end
 
+    def day_convert_temp(temp)
+        convert_temp(temp)
+    end
+
     def weather_icon(icon)
       "http://openweathermap.org/img/w/#{icon}.png"
     end

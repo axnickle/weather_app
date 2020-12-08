@@ -11,7 +11,11 @@ module WeatherData
     data['hourly']
   end 
 
-  def daily_temp
+  def day_temp
+    data['day']
+  end
+
+  def daily
     data['daily']
   end
 
@@ -28,11 +32,11 @@ module WeatherData
   end
 
   def max
-    convert_temp(daily_temp[0]['temp']['max']) # accessing value from temp hash; access max hash
+    convert_temp(daily[0]['temp']['max']) # accessing value from temp hash; access max hash
   end
 
   def min
-    convert_temp(daily_temp[0]['temp']['min'])
+    convert_temp(daily[0]['temp']['min'])
   end
 
   def weather_description
