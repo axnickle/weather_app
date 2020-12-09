@@ -33,6 +33,10 @@ a:active {
   text-decoration: none;
 }
 
+td {
+  width: 100%;
+  padding: 1em;
+}
 
 /* Create three equal columns that floats next to each other */
 .column {
@@ -43,8 +47,8 @@ a:active {
 
 .column_7 {
   float: left;
-  width: 10.7%;
-  padding: 0.73em;
+  width: 14.285714285714285714285714285714%;
+  // padding: 0.73em;
 }
 
 /* Clear floats after the columns */

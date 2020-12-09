@@ -20,7 +20,8 @@ module WeatherData
   end
 
   def current_time_data
-    {'current_temp' => current_temp, 'description' => weather_description, 'icon' => weather_icon }
+    icon = (current_data['weather'].first)['icon']
+    {'current_temp' => current_temp, 'description' => weather_description, 'icon' => weather_icon(icon) }
   end
 
   def current_temp 
@@ -43,8 +44,7 @@ module WeatherData
     (current_data['weather'].first)['description'] # .first  is the same as [0]
   end
 
-  def weather_icon
-    icon = (current_data['weather'].first)['icon']
+  def weather_icon(icon)
     "http://openweathermap.org/img/w/#{icon}.png"
   end
 end

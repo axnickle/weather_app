@@ -1,15 +1,4 @@
 module HomeHelper
     include WeatherData
-
-    def hourly_convert_temp(temp)
-        convert_temp(temp)
-    end
-
-    def day_convert_temp(temp)
-        convert_temp(temp)
-    end
-
-    def weather_icon(icon)
-      "http://openweathermap.org/img/w/#{icon}.png"
-    end
+    #include gives us access to all the methods in WeatherData.rb
 end

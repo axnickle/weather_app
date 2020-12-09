@@ -36,7 +36,7 @@
                     <%= image_tag(weather_icon(hourly["weather"].first["icon"]), alt: "weather icon") %>
                 </div>
                 <div>
-                    <%= hourly_convert_temp(hourly["temp"])%>&deg; <! -- 298.82 -->
+                    <%= convert_temp(hourly["temp"])%>&deg; <! -- 298.82 -->
                 </div>
                 <div style="padding-top: 0.5em;">
                     <%= Time.at(hourly["dt"]).strftime("%l %P")%>
@@ -47,26 +47,28 @@
 
    <div>
     <div>
-        <% @daily.take(8).each_with_index do |day, index| %>
-          <% next if index == 0%>
-          <% if index ==1 %>
-            <div>  
-                Tomorrow
-            </div>
-          <% else %>
-          <div>
-            <%= Time.at(day["dt"]).strftime("%A")%>
-          </div>
-          <% end %>
-          <div>
-            <%= image_tag(weather_icon(day["weather"].first["icon"]), alt: "weather icon") %>
-          </div>
-            <%= "#{day['day_temp']}" %>
-          <div> 
-            <%= day_convert_temp(day["temp"]["max"]) %>&deg;/
-            <%= day_convert_temp(day["temp"]["min"]) %>&deg;
-          </div>
-        <% end %>
+        <table>
+            <% @daily.take(8).each_with_index do |day, index| %>
+            <% next if index == 0%>
+                <tr>
+                    <td>
+                        <% if index ==1 %> 
+                            Tomorrow
+                        <% else %>
+                        <%= Time.at(day["dt"]).strftime("%A")%>
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= image_tag(weather_icon(day["weather"].first["icon"]), alt: "weather icon") %>
+                    </td>
+                    <td>
+                        <%= "#{day['day_temp']}" %>
+                        <%= convert_temp(day["temp"]["max"]) %>&deg;/
+                        <%= convert_temp(day["temp"]["min"]) %>&deg;
+                    </td>
+                </tr>
+            <% end %>
+        </table>
     </div>             
    </div>
 <!-- no output so no need for = -->
