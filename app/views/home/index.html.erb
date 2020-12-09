@@ -45,13 +45,13 @@
         <% end %>
    </div>
 
-   <div>
-    <div>
+  
+    <div style="margin: 30px;">
         <table>
             <% @daily.take(8).each_with_index do |day, index| %>
             <% next if index == 0%>
                 <tr>
-                    <td>
+                    <td style="width: 99%">
                         <% if index ==1 %> 
                             Tomorrow
                         <% else %>
@@ -63,13 +63,14 @@
                     </td>
                     <td>
                         <%= "#{day['day_temp']}" %>
-                        <%= convert_temp(day["temp"]["max"]) %>&deg;/
-                        <%= convert_temp(day["temp"]["min"]) %>&deg;
+                        <%= convert_temp(day["temp"]["max"]) %>&deg;/<%= convert_temp(day["temp"]["min"]) %>&deg;
                     </td>
                 </tr>
             <% end %>
         </table>
     </div>             
-   </div>
+   
 <!-- no output so no need for = -->
 <!-- @hourly_temp is where we dump hourly json data 
+
+

@@ -34,7 +34,7 @@ a:active {
 }
 
 td {
-  width: 100%;
+  width: auto;
   padding: 1em;
 }
 
@@ -47,6 +47,7 @@ td {
 
 .column_7 {
   float: left;
+  text-align: center;
   width: 14.285714285714285714285714285714%;
   // padding: 0.73em;
 }
